@@ -2,6 +2,10 @@
 
 Este README resume conceptos clave para comenzar a trabajar correctamente con **HTML y CSS**, errores comunes y buenas prácticas.
 
+***Un aprendiz indica que sus estilos CSS no se aplican***
+
+> Explica tu proceso de diagnóstico y acompañammiento paso a paso**.
+
 ---
 
 ## 🔗 Cómo linkear el CSS a mi HTML
