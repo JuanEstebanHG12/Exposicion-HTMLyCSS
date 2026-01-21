@@ -25,6 +25,6 @@ p{
     color: aqua;
 }
 
-body > div.colors > p{
+body > div > p{
     color: green;
 }
