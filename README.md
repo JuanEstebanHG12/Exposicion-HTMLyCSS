@@ -20,7 +20,7 @@ Si tu archivo tiene esta estructura:
 El link correcto es:
 
 ```html
-<link rel="stylesheet" href="./style.css">``
+<link rel="stylesheet" href="./style.css">```
 
 ❌ Ejemplo incorrecto (ruta inválida)
 
