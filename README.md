@@ -102,7 +102,7 @@ div > span > p.parrafo {
 ✔ Solo se aplica si toda la estructura coincide.
 
 
-### ⚖️ Sistemas de pesos en selectores CSS
+### ⚖️ Sistema de pesos en selectores CSS
 |            Tipo        | Inline styles | ID   | Clase |Etiqueta|
 |------------------------|---------------|------|-------|--------|
 | 🔹 `p`                 | 0            | 0     |   0    |   1     |
