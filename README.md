@@ -10,66 +10,79 @@ Para que el CSS funcione, debe estar correctamente enlazado dentro del `<head>` 
 
 ### ✅ Ejemplo correcto (ruta válida)
 
-Si tu archivo tiene esta estructura:
+Estructura del proyecto:
 
 /proyecto
+
 ├── index.html
+
 └── style.css
 
 
 El link correcto es:
 
 ```html
-<link rel="stylesheet" href="./style.css">```
+<link rel="stylesheet" href="./style.css">
+```
 
 ❌ Ejemplo incorrecto (ruta inválida)
 
+```
 <link rel="stylesheet" href="styles.css">
+```
 
 ❌ Error común:
 
-    El archivo no existe
+- Creamos la arquitectura base
 
-    El nombre es diferente (style.css ≠ styles.css)
+- El nombre es diferente (style.css ≠ styles.css)
 
-    Está en otra carpeta y no se indicó la ruta correcta
+- Está en otra carpeta y no se indicó la ruta correcta
 
-🎯 Selectores CSS y su peso (especificidad)
+---
+
+## 🎯 Selectores CSS y su especificidad
 
 La especificidad define qué estilo se aplica cuando varios selectores apuntan al mismo elemento.
-🟢 Tipos de selectores (de menor a mayor peso)
-Selector	Ejemplo	Peso
-Etiqueta	p	Bajo
-Clase	.texto	Medio
-ID	#titulo	Alto
-Selector complejo	div > span > p.parrafo	Más específico
-🔹 Selector por etiqueta
 
-p {
-  color: blue;
+| Tipo de selector     | Ejemplo                      | Peso       |
+|--------------------|------------------------------|-----------|
+| 🔹 Etiqueta          | `p`                          | Bajo       |
+| 🔹 Clase             | `.texto`                     | Medio    |
+| 🔹 ID                | `#titulo`                    | Alto     |
+| 🔹 Selector complejo | `div > span > p.parrafo`     | Depende  |
+
+🔹 **Selector por Etiqueta**
+```
+p{
+    color: aqua;
 }
+```
+Aplica a todos los `<p>`.
 
-Aplica a todos los <p>.
-🔹 Selector por clase
-
-.parrafo {
-  color: green;
+🔹 **Selector por clase**
+```
+.textColor{
+    color: red;
 }
-
-<p class="parrafo">Texto</p>
+<p class="textColor">Texto</p>
+```
 
 ✔ Más específico que una etiqueta.
-🔹 Selector por ID
 
-#principal {
-  color: red;
+🔹 **Selector por ID**
+```
+#textColor{
+    color: purple;
 }
 
-<p id="principal">Texto</p>
+<p id="textColor" class="textColor">test</p>
+```
 
 ⚠️ Un ID debe ser único en el HTML.
-🔹 Selector complejo (más específico)
 
+🔹 **Selector complejo (más específico)**
+```
 div > span > p.parrafo {
   color: purple;
 }
@@ -79,65 +92,70 @@ div > span > p.parrafo {
     <p class="parrafo">Texto</p>
   </span>
 </div>
-
+```
 ✔ Solo se aplica si toda la estructura coincide.
-⚠️ Errores comunes por los que no funciona el CSS
+
+
+### ⚖️ Sistemas de pesos en selectores CSS
+|            Tipo        | Inline styles | ID   | Clase |Etiqueta|
+|------------------------|---------------|------|-------|--------|
+| 🔹 `p`                 | 0            | 0     |   0    |   1     |
+| 🔹 `p.textColor`       | 0            | 0     |    1   |    1    |
+| 🔹 `p#textColor`       | 0            | 1     |    0   |    0    |
+|🔹`div > span > p.textColor`| 0          | 0     |  1     |     3  |
+
+
+
+## ⚠️ Errores comunes por los que no funciona el CSS
 ❌ 1. CSS mal linkeado
 
-    Ruta incorrecta
+   - Ruta incorrecta
 
-    Archivo no existe
+   - Archivo no existe
 
-    Error de nombre
+   - Error de nombre
 
 ❌ 2. Error de escritura
-
+```
 .colr {
   color: red;
 }
+```
 
 ➡️ color está mal escrito
-❌ 3. El selector no coincide con el HTML
 
+❌ 3. El selector no coincide con el HTML
+```
 .texto {
   color: blue;
 }
 
 <p class="text">Hola</p>
+```
 
 ❌ .texto ≠ .text
-❌ 4. Otro selector tiene más peso
 
+❌ 4. Otro selector tiene más peso
+```
 p {
   color: blue;
 }
+```
+```
 
 #especial {
   color: red;
 }
-
+```
 ➡️ Gana el id por mayor especificidad.
-❌ 5. Uso incorrecto de !important
 
-p {
-  color: blue !important;
-}
 
-⚠️ Puede romper la lógica de estilos si se usa sin necesidad.
-❌ 6. Caché del navegador
 
-A veces el navegador guarda estilos antiguos.
-
-✔ Solución:
-
-    Recargar con Ctrl + F5
-
-    Abrir en incógnito
-
-✅ Recomendaciones finales
+## ✅ Recomendaciones finales
 
 ✔ Usa clases antes que IDs
+
 ✔ Mantén nombres claros y consistentes
-✔ Evita !important
+
 ✔ Revisa la consola del navegador
-✔ Usa el inspector (F12)
+
