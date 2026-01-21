@@ -4,9 +4,9 @@ Este README resume conceptos clave para comenzar a trabajar correctamente con **
 
 ***Un aprendiz indica que sus estilos CSS no se aplican***
 
-> Explica tu proceso de diagnóstico y acompañammiento paso a paso.
+> Explica tu proceso de diagnóstico y acompañamiento paso a paso.
 > - Verificaciones de técnicas básicas
-> - Revisón del flujo HYML-CSS
+> - Revisión del flujo HTML-CSS
 
 ---
 
